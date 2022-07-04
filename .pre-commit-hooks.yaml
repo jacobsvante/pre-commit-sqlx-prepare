@@ -1,0 +1,7 @@
+-   id: sqlx-prepare
+    name: ensure that sqlx-data.json is up to date
+    language: rust
+    entry: pre-commit-sqlx-prepare
+    stages: [commit]
+    types: [rust]
+
