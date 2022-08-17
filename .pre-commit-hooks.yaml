@@ -4,4 +4,4 @@
     entry: pre-commit-sqlx-prepare
     stages: [commit]
     types: [rust]
-
+    pass_filenames: false

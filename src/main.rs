@@ -1,6 +1,6 @@
 use std::{
-    env::{args, current_dir},
-    io::{BufRead, Write},
+    env::args,
+    io::Write,
     process::Command,
 };
 
