@@ -31,7 +31,7 @@ jobs:
         run: cargo fmt --all -- --check
 
   test:
-    name: Check Rust style
+    name: Run tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3.0.2
@@ -39,6 +39,12 @@ jobs:
         with:
           toolchain: stable
       - uses: Swatinem/rust-cache@v1.3.0
+      - name: Install sqlx-cli
+        run: cargo install sqlx-cli --version=0.6.1 --no-default-features -F sqlite -F rustls
+      - name: Setup python
+        uses: actions/setup-python@v3
+      - name: Install pre-commit
+        run: pip install pre-commit
       - name: Test code
         run: cargo test
 
